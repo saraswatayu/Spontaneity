@@ -106,7 +106,7 @@ class NewGroupViewController: UIViewController, UITableViewDelegate, UITableView
                     group["members"] = selectedPeople.description
                     group.saveInBackgroundWithBlock {
                         (succeeded: Bool!, error: NSError!) -> Void in
-                        if error != nil {
+                        if error == nil {
                             self.dismissViewControllerAnimated(true, completion: nil)
                         } else {
 

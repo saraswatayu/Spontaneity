@@ -31,6 +31,14 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
                 self.groups = objects
+                self.groups.sort({
+                    if let date1 = $0["updatedAt"] as? NSDate {
+                        if let date2 = $1["updatedAt"] as?  NSDate {
+                            return date1.compare(date2) == .OrderedAscending
+                        }
+                    }
+                    return false
+                })
                 self.tableView?.reloadData()
             } else {
                 

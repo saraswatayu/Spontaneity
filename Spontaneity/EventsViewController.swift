@@ -51,22 +51,22 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Table View
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return events.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = self.tableView?.dequeueReusableCellWithIdentifier("events") as UITableViewCell
         
-        cell.textLabel.text = events[indexPath.row]["name"] as? String
+        cell.textLabel.text = events[indexPath.section]["name"] as? String
         
-        var startDate: NSDate = events[indexPath.row]["startDate"] as NSDate
-        
-        
-        cell.detailTextLabel?.text = events[indexPath.row]["events"] as? String
+        var startDate: NSDate = events[indexPath.section]["startTime"] as NSDate
+        var dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = .ShortStyle
+        cell.detailTextLabel?.text = dateFormatter.stringFromDate(startDate)
         
         //cell.imageView.image = UIImage(forName: events[indexPath.row]["name"] as? String, size: CGSize(width: 30, height: 30))
         

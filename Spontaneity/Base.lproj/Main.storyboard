@@ -25,28 +25,51 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7K-ZE-tPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="337"/>
+            <point key="canvasLocation" x="224" y="337"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Bxh-q9-Fxj">
+        <scene sceneID="Ov7-Gw-fov">
             <objects>
-                <navigationController id="I3a-SW-o6r" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rjf-4R-TtG">
+                <navigationController id="d4x-N1-I7k" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QAI-cU-XrC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.89019607840000003" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="jZS-Lk-4oP" kind="relationship" relationship="rootViewController" id="zPv-hw-mJ4"/>
+                        <segue destination="jZS-Lk-4oP" kind="relationship" relationship="rootViewController" id="Nht-wO-xuH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UeR-VI-rgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sw-tI-16d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2628" y="-455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w0i-8O-dzr">
+            <objects>
+                <navigationController id="jQJ-cR-jyO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DpL-Qc-L3o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.89019607840000003" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SpZ-Ov-u8P" kind="relationship" relationship="rootViewController" id="d6m-IC-uES"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MQy-3B-4FA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3411" y="244"/>
         </scene>
         <!--New Group-->
         <scene sceneID="j1j-vp-wNw">
@@ -288,11 +311,11 @@
                         <viewControllerLayoutGuide type="bottom" id="enQ-3A-RfK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oG9-oE-Z34">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="lgn-Dw-eHk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.89019607840000003" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -335,11 +358,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Groups" image="974-users.png" id="KjN-PC-aff"/>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="lgn-Dw-eHk" id="SsN-nz-24z"/>
-                        <segue destination="I3a-SW-o6r" kind="presentation" identifier="Add Group" id="AP9-AH-CGh"/>
                         <segue destination="AaD-02-imB" kind="show" identifier="View Events" id="X8a-ZI-OaR"/>
+                        <segue destination="d4x-N1-I7k" kind="presentation" identifier="Add Group" id="YJQ-oJ-X4P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwC-YP-gYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,11 +465,11 @@
                         <viewControllerLayoutGuide type="bottom" id="73Z-HM-cc1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lBJ-iu-DxP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="nx4-mh-Ue1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.89019607840000003" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -480,13 +502,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="nx4-mh-Ue1" secondAttribute="bottom" constant="44" id="PpY-gC-hFD"/>
+                            <constraint firstAttribute="bottom" secondItem="nx4-mh-Ue1" secondAttribute="bottom" id="PpY-gC-hFD"/>
                             <constraint firstItem="nx4-mh-Ue1" firstAttribute="top" secondItem="lBJ-iu-DxP" secondAttribute="top" id="YSR-aM-XtE"/>
                             <constraint firstAttribute="trailing" secondItem="nx4-mh-Ue1" secondAttribute="trailing" id="rvO-Pm-dhk"/>
                             <constraint firstItem="nx4-mh-Ue1" firstAttribute="leading" secondItem="lBJ-iu-DxP" secondAttribute="leading" id="z7i-9e-05J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="WOi-RL-Jdf"/>
+                    <navigationItem key="navigationItem" title="Events" id="WOi-RL-Jdf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kpX-mb-9uq">
+                            <connections>
+                                <segue destination="jQJ-cR-jyO" kind="presentation" identifier="Add Event" id="3tv-mz-Rex"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nx4-mh-Ue1" id="VSS-RY-ZNy"/>
                     </connections>
@@ -494,6 +522,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnm-tR-5Lb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2628" y="244"/>
+        </scene>
+        <!--New Event-->
+        <scene sceneID="3iW-ru-8Zx">
+            <objects>
+                <viewController id="SpZ-Ov-u8P" customClass="NewEventViewController" customModule="Spontaneity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ABu-Wr-eR8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkg-Sf-9e5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eFm-he-Qdd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qe3-7A-V8S">
+                                <rect key="frame" x="0.0" y="20" width="600" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="7im-EV-xCA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-YG-1i6">
+                                <rect key="frame" x="0.0" y="95" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="V1p-tR-TxD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="30Y-YG-1i6" firstAttribute="leading" secondItem="eFm-he-Qdd" secondAttribute="leading" id="FRN-r0-7eG"/>
+                            <constraint firstItem="30Y-YG-1i6" firstAttribute="top" secondItem="eFm-he-Qdd" secondAttribute="top" constant="95" id="Hbm-lz-Aur"/>
+                            <constraint firstItem="Qe3-7A-V8S" firstAttribute="leading" secondItem="eFm-he-Qdd" secondAttribute="leading" id="Sm3-t1-9ur"/>
+                            <constraint firstAttribute="trailing" secondItem="Qe3-7A-V8S" secondAttribute="trailing" id="XFZ-5v-YR1"/>
+                            <constraint firstAttribute="trailing" secondItem="30Y-YG-1i6" secondAttribute="trailing" id="hF8-NQ-gCb"/>
+                            <constraint firstItem="Qe3-7A-V8S" firstAttribute="top" secondItem="eFm-he-Qdd" secondAttribute="top" constant="20" id="wVa-EG-UdS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Event" id="sWP-aX-T14">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8uf-Rq-dxd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="Pbj-Nz-KW7"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentTime" destination="30Y-YG-1i6" id="zlz-rp-d3O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ws-u5-xix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4238" y="244"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="Arh-14-GQE">
