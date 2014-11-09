@@ -337,7 +337,7 @@
                                     <action selector="logout" destination="64r-H1-cwU" eventType="touchUpInside" id="r83-aH-ykr"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-LG-Zsr">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-LG-Zsr">
                                 <rect key="frame" x="240" y="20" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="C3a-jB-CfG"/>
