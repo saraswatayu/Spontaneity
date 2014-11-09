@@ -168,6 +168,9 @@
                                     <action selector="logout" destination="64r-H1-cwU" eventType="touchUpInside" id="r83-aH-ykr"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-LG-Zsr">
+                                <rect key="frame" x="180" y="20" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -178,6 +181,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="769-male.png" id="LdX-CP-zvA"/>
                     <connections>
+                        <outlet property="image" destination="Lwh-LG-Zsr" id="O9r-63-WyW"/>
                         <outlet property="signout" destination="okO-jd-xzJ" id="EUm-yq-Cjp"/>
                     </connections>
                 </viewController>

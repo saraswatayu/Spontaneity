@@ -11,7 +11,7 @@ import Parse
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet var image: UIImage?
+    @IBOutlet var image: UIImageView?
     @IBOutlet var name: UILabel?
     @IBOutlet var email: UILabel?
     
