@@ -104,7 +104,7 @@ class NewGroupViewController: UIViewController, UITableViewDelegate, UITableView
                         (succeeded: Bool!, error: NSError!) -> Void in
                         if error != nil {
                             self.dismissViewControllerAnimated(true, completion: nil)
-                        } else {
+                        } else {                            
                             let errorString = error.userInfo?["error"] as String
                             var alertView: UIAlertController = UIAlertController(title: "Create Group Failed", message: errorString, preferredStyle: .Alert)
                             
