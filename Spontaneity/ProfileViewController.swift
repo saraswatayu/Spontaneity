@@ -14,8 +14,11 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var name: UILabel?
     @IBOutlet var email: UILabel?
+    @IBOutlet var user: UILabel?
+    
     
     @IBOutlet var signout: UIButton?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,32 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         imageView?.layer.borderWidth = 1.0
         
         imageView?.clipsToBounds = true
+        
+        
+        var f_name: String = ""
+        var l_name: String = ""
+        var username: String = ""
+        var email_address: String = ""
+        
+        f_name = PFUser.currentUser()["firstName"] as String
+        l_name = PFUser.currentUser()["lastName"] as String
+        username = PFUser.currentUser().username
+        email_address = PFUser.currentUser().email
+        
+        if (username == "") {
+            username = "Facebook Account"
+        }
+        
+        name?.text = f_name + " " + l_name
+        email?.text = " " + email_address
+        user?.text = " " + username
+        
+        email?.layer.borderColor = UIColor.grayColor().CGColor
+        email?.layer.borderWidth = 2
+        
+        user?.layer.borderColor = UIColor.grayColor().CGColor
+        user?.layer.borderWidth = 2
+        
     }
     
     func showImagePicker() {
@@ -54,6 +83,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+
     
     @IBAction func logout() {
         PFUser.logOut()
