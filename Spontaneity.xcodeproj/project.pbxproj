@@ -11,7 +11,6 @@
 		2A69B05F1A0E0C3000CBDDE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */; };
 		2A69B0621A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0601A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld */; };
 		2A69B0671A0E0C3000CBDDE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B0651A0E0C3000CBDDE4 /* Main.storyboard */; };
-		2A69B0691A0E0C3000CBDDE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */; };
 		2A69B06C1A0E0C3000CBDDE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B06A1A0E0C3000CBDDE4 /* LaunchScreen.xib */; };
 		2A69B0781A0E0C3000CBDDE4 /* SpontaneityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0771A0E0C3000CBDDE4 /* SpontaneityTests.swift */; };
 		2A69B0851A0E0CB600CBDDE4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A69B0811A0E0CB600CBDDE4 /* Bolts.framework */; };
@@ -67,7 +66,6 @@
 		2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A69B0611A0E0C3000CBDDE4 /* Spontaneity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spontaneity.xcdatamodel; sourceTree = "<group>"; };
 		2A69B0661A0E0C3000CBDDE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A69B06B1A0E0C3000CBDDE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2A69B0711A0E0C3000CBDDE4 /* SpontaneityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpontaneityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A69B0761A0E0C3000CBDDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				2A69B0B41A0E27AC00CBDDE4 /* Groups */,
 				2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */,
 				2A69B0651A0E0C3000CBDDE4 /* Main.storyboard */,
-				2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */,
 				2A69B06A1A0E0C3000CBDDE4 /* LaunchScreen.xib */,
 				2A69B0601A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld */,
 				709FF67E1A0F33C0004A0D33 /* Images-2.xcassets */,
@@ -414,7 +411,6 @@
 				2A69B06C1A0E0C3000CBDDE4 /* LaunchScreen.xib in Resources */,
 				709FF67F1A0F33C0004A0D33 /* Images-2.xcassets in Resources */,
 				2A69B0B21A0E27AA00CBDDE4 /* 974-users.png in Resources */,
-				2A69B0691A0E0C3000CBDDE4 /* Images.xcassets in Resources */,
 				2A69B0BB1A0E282D00CBDDE4 /* 769-male.png in Resources */,
 				2A69B0CB1A0E2E5600CBDDE4 /* 740-gear@2x.png in Resources */,
 			);
