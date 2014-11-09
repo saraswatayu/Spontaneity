@@ -25,6 +25,7 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     override func viewDidAppear(animated: Bool) {
+        groups = []
         var query = PFQuery(className: "Groups")
         query.whereKey("members", containsString: PFUser.currentUser().objectId)
         query.findObjectsInBackgroundWithBlock({
@@ -86,6 +87,29 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 selectedIndex = indexPath
                 self.performSegueWithIdentifier("View Events", sender: self)
             }
+        }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            groups.removeAtIndex(indexPath.row)
+            var query = PFQuery(className: "Groups")
+            query.whereKey("members", containsString: PFUser.currentUser().objectId)
+            query.findObjectsInBackgroundWithBlock({
+                (objects: [AnyObject]!, error: NSError!) -> Void in
+                if error == nil {
+                    for var i = 0; i < objects.count; i++ {
+                        //objects[i]["members"] = (objects[i]["members"] as String).stringByReplacingOccurrencesOfString(PFUser.currentUser().objectId, withString: "")
+
+                    }
+                } else {
+                    
+                }
+            })
         }
     }
     

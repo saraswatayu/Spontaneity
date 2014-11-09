@@ -14,7 +14,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var tableView: UITableView?
     var events: [AnyObject] = []
     var groupID: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +26,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidAppear(animated: Bool) {
         if let groupID = groupID {
+            events = []
             var query = PFQuery(className: "Groups")
             query.getObjectInBackgroundWithId(groupID) {
                 (groupEvent: PFObject!, error: NSError!) -> Void in
@@ -33,7 +34,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     if let groupEvents = groupEvent["events"] as? String {
                         var eventString = groupEvents.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
                         var eventIDs: [String] = eventString.componentsSeparatedByString(", ")
-                        println(eventIDs.description)
                         var eventQuery = PFQuery(className: "Events")
                         eventQuery.findObjectsInBackgroundWithBlock({
                             (objects: [AnyObject]!, error: NSError!) -> Void in
@@ -75,16 +75,85 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var attending: String = events[indexPath.section]["attending"] as String
         attending = attending.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
         var attendingList: [String] = attending.componentsSeparatedByString(", ")
-        var attendingString = ""
-        /*for attendee: String in attendingList {
-            var query = PFQuery(className: "User")
+        var attendingString = "Attending: "
+        for (i, attendee) in enumerate(attendingList) {
+            var query = PFQuery(className: "_User")
             query.getObjectInBackgroundWithId(attendee) {
                 (user: PFObject!, error: NSError!) -> Void in
-                attendingString += user["firstName"]
+                if error == nil && user != nil {
+                    if let username = user["firstName"] as? String {
+                        attendingString += username
+                        if i < attendingList.count - 1 {
+                            attendingString += ", "
+                        }
+                        (cell.viewWithTag(300) as UILabel).text = attendingString
+                    }
+                }
             }
-        }*/
+        }
+        
+        if attendingList.count == 0 || attendingList[0] == "" {
+            attendingString = "No one attending."
+            (cell.viewWithTag(300) as UILabel).text = attendingString
+        }
+        
+        if contains(attendingList, PFUser.currentUser().objectId) {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
+        cell.selectionStyle = .None
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // event id
+        var query = PFQuery(className: "Events")
+        query.getObjectInBackgroundWithId(events[indexPath.section].objectId) {
+            (event: PFObject!, error: NSError!) -> Void in
+            if error == nil {
+                if tableView.cellForRowAtIndexPath(indexPath)!.accessoryType == .Checkmark {
+                    var attending: String = self.events[indexPath.section]["attending"] as String
+                    attending = attending.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
+                    var attendingList: [String] = attending.componentsSeparatedByString(", ")
+                    var newList = "["
+                    for var i = 0; i < attendingList.count; i++ {
+                        if attendingList[i] != "" {
+                            if attendingList[i] != PFUser.currentUser().objectId {
+                                newList += attendingList[i] + ", "
+                            }
+                        }
+                    }
+                    newList = newList.substringToIndex(newList.endIndex.predecessor())
+                    newList += "]"
+                    event["attending"] = newList
+                    
+                    self.tableView!.cellForRowAtIndexPath(indexPath)!.accessoryType = .None
+                } else if  tableView.cellForRowAtIndexPath(indexPath)!.accessoryType == .None {
+                    var attending: String = self.events[indexPath.section]["attending"] as String
+                    attending = attending.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
+                    var attendingList: [String] = attending.componentsSeparatedByString(", ")
+                    var newList = "["
+                    for var i = 0; i < attendingList.count; i++ {
+                        if attendingList[i] != "" {
+                            newList += attendingList[i] + ", "
+                        }
+                    }
+                    newList += PFUser.currentUser().objectId + "]"
+                    event["attending"] = newList
+                    
+                    self.tableView!.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark
+                }
+                
+                event.saveInBackgroundWithBlock {
+                    (succeeded: Bool!, error: NSError!) -> Void in
+                    self.viewDidAppear(false)
+                    self.tableView!.reloadData()
+                }
+            }
+        }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -95,7 +164,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 56.0
+        return 90.0
     }
     
     override func didReceiveMemoryWarning() {
