@@ -26,8 +26,13 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
         self.imageView?.addGestureRecognizer(tapGesture)
+        
         signout?.layer.cornerRadius = 4.0
+        
         imageView?.layer.cornerRadius = 60.0
+        imageView?.layer.borderColor = UIColor.blackColor().CGColor
+        imageView?.layer.borderWidth = 1.0
+        
         imageView?.clipsToBounds = true
     }
     
