@@ -30,14 +30,18 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             query.getObjectInBackgroundWithId(groupID) {
                 (groupEvent: PFObject!, error: NSError!) -> Void in
                 if error == nil {
-                    if let groupEvents = groupEvent["members"] as? String {
-                        var eventString = groupEvents.stringByReplacingOccurrencesOfString("[", withString: "")
+                    if let groupEvents = groupEvent["events"] as? String {
+                        var eventString = groupEvents.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
                         var eventIDs: [String] = eventString.componentsSeparatedByString(", ")
-                        
+                        println(eventIDs.description)
                         var eventQuery = PFQuery(className: "Events")
                         eventQuery.findObjectsInBackgroundWithBlock({
                             (objects: [AnyObject]!, error: NSError!) -> Void in
-                            self.events = objects
+                            for var i = objects.count - 1; i >= 0; i-- {
+                                if contains(eventIDs, objects[i].objectId) {
+                                    self.events.append(objects[i])
+                                }
+                            }
                             self.tableView?.reloadData()
                         })
                     }
@@ -61,14 +65,24 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = self.tableView?.dequeueReusableCellWithIdentifier("events") as UITableViewCell
         
-        cell.textLabel.text = events[indexPath.section]["name"] as? String
+        (cell.viewWithTag(100) as UILabel).text = events[indexPath.section]["name"] as? String
         
         var startDate: NSDate = events[indexPath.section]["startTime"] as NSDate
         var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.timeStyle = .ShortStyle
-        cell.detailTextLabel?.text = dateFormatter.stringFromDate(startDate)
+        (cell.viewWithTag(200) as UILabel).text = dateFormatter.stringFromDate(startDate)
         
-        //cell.imageView.image = UIImage(forName: events[indexPath.row]["name"] as? String, size: CGSize(width: 30, height: 30))
+        var attending: String = events[indexPath.section]["attending"] as String
+        attending = attending.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
+        var attendingList: [String] = attending.componentsSeparatedByString(", ")
+        var attendingString = ""
+        /*for attendee: String in attendingList {
+            var query = PFQuery(className: "User")
+            query.getObjectInBackgroundWithId(attendee) {
+                (user: PFObject!, error: NSError!) -> Void in
+                attendingString += user["firstName"]
+            }
+        }*/
         
         return cell
     }

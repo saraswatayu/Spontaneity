@@ -86,24 +86,27 @@ class NewEventViewController: UIViewController {
                         if error == nil {
                             var query: PFQuery = PFQuery(className: "Groups")
                             query.getObjectInBackgroundWithId(groupID) {
-                                (group: PFObject!, error: NSError!) -> Void in
-                                if error == nil {
+                                (group: PFObject!, error2: NSError!) -> Void in
+                                if error2 == nil {
+                                    var eventsString = ""
                                     if let events = group["events"] as? String {
-                                        var eventsString = ""
                                         if events.rangeOfString("[") != nil {
                                             eventsString = events.stringByReplacingOccurrencesOfString("]", withString: "")
                                             eventsString += ", " + event.objectId + "]"
                                         } else {
                                             eventsString = "[" + event.objectId + "]"
                                         }
-                                        group["events"] = eventsString
+                                    } else {
+                                        eventsString = "[" + event.objectId + "]"
                                     }
+                                    group["events"] = eventsString
+
                                     group.saveInBackgroundWithBlock {
                                         (succeeded: Bool!, error: NSError!) -> Void in
                                         self.dismissViewControllerAnimated(true, completion: nil)
                                     }
                                 } else {
-                                    
+                                    println(error.description)
                                 }
                             }
                         } else {

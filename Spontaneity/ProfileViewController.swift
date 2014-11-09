@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView?.image = UIImage(named: "769-male@2x.png")
+        imageView?.image = UIImage(named: "769-male.png")
         
         var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
         self.imageView?.addGestureRecognizer(tapGesture)
@@ -36,23 +36,25 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         imageView?.clipsToBounds = true
         
-        
-        var f_name: String = ""
-        var l_name: String = ""
-        var username: String = ""
-        var email_address: String = ""
-        
-        f_name = PFUser.currentUser()["firstName"] as String
-        l_name = PFUser.currentUser()["lastName"] as String
-        username = PFUser.currentUser().username
-        email_address = PFUser.currentUser().email
+        var f_name = PFUser.currentUser()["firstName"] as? String
+        var l_name = PFUser.currentUser()["lastName"] as? String
+        var username = PFUser.currentUser().username
+        var email_address = PFUser.currentUser().email
         
         if (username == "") {
             username = "Facebook Account"
         }
         
-        name?.text = f_name + " " + l_name
-        email?.text = " " + email_address
+        if f_name != nil && l_name != nil {
+            name?.text = f_name! + " " + l_name!
+        } else {
+
+        }
+        
+        if email_address != nil {
+            email?.text = " " + email_address!
+        }
+        
         user?.text = " " + username
         
         email?.layer.borderColor = UIColor.grayColor().CGColor

@@ -64,14 +64,14 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if let events = groups[indexPath.row]["events"] as? String {
-            var parsedEvents = events.stringByReplacingOccurrencesOfString("[", withString: "")
+            var parsedEvents = events.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "")
             var eventArray = parsedEvents.componentsSeparatedByString(", ")
             cell.detailTextLabel?.text = String(eventArray.count) + ((eventArray.count > 1) ? " events" : " event")
-            cell.accessoryType = .DisclosureIndicator
         } else {
-            cell.detailTextLabel?.text = ""
-            cell.accessoryType = .None
+            cell.detailTextLabel?.text = nil
         }
+        
+        cell.accessoryType = .DisclosureIndicator
         
         cell.selectionStyle = .None
         cell.imageView.image = UIImage(forName: groups[indexPath.row]["name"] as? String, size: CGSize(width: 36, height: 36))
@@ -112,6 +112,7 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segue.identifier == "View Events" {
             var destination: EventsViewController = segue.destinationViewController as EventsViewController
             destination.groupID = groups[selectedIndex.row].objectId
+            destination.title = groups[selectedIndex.row]["name"] as? String
         }
     }
 }
