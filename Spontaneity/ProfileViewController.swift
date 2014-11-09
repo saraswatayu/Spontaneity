@@ -17,8 +17,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     
     @IBOutlet var signout: UIButton?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
