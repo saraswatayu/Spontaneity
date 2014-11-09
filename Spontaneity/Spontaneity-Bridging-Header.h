@@ -4,3 +4,4 @@
 
 #import "UIImage+GKContact.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <FacebookSDK/FacebookSDK.h>

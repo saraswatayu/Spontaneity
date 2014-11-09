@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="1801" y="806"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="IXT-uw-Coo">
             <objects>
-                <viewController id="64r-H1-cwU" sceneMemberID="viewController">
+                <viewController id="64r-H1-cwU" customClass="ProfileViewController" customModule="Spontaneity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qtL-sZ-6Wr"/>
                         <viewControllerLayoutGuide type="bottom" id="KiN-nU-j23"/>
@@ -152,9 +152,34 @@
                     <view key="view" contentMode="scaleToFill" id="qRS-Lo-xTC">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okO-jd-xzJ">
+                                <rect key="frame" x="16" y="423" width="568" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UuK-ec-JB4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="SIGN OUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout" destination="64r-H1-cwU" eventType="touchUpInside" id="r83-aH-ykr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="okO-jd-xzJ" firstAttribute="leading" secondItem="qRS-Lo-xTC" secondAttribute="leading" constant="16" id="eaT-lg-608"/>
+                            <constraint firstAttribute="trailing" secondItem="okO-jd-xzJ" secondAttribute="trailing" constant="16" id="gxF-ph-l8k"/>
+                            <constraint firstAttribute="bottom" secondItem="okO-jd-xzJ" secondAttribute="bottom" constant="20" id="o0q-Z9-got"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="740-gear.png" id="LdX-CP-zvA"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="769-male.png" id="LdX-CP-zvA"/>
+                    <connections>
+                        <outlet property="signout" destination="okO-jd-xzJ" id="EUm-yq-Cjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFG-Ha-aXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -472,7 +497,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="740-gear.png" width="28" height="28"/>
         <image name="769-male.png" width="28" height="28"/>
         <image name="974-users.png" width="28" height="18"/>
         <image name="FB-fLogo-online-broadcast.png" width="118" height="228"/>
