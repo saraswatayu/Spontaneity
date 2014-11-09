@@ -9,10 +9,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Startup_Screen" translatesAutoresizingMaskIntoConstraints="NO" id="Wv1-gk-SVW">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wv1-gk-SVW" secondAttribute="trailing" id="7OU-bM-AL4"/>
+                <constraint firstItem="Wv1-gk-SVW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ldh-yo-j31"/>
+                <constraint firstItem="Wv1-gk-SVW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rbJ-LZ-4tu"/>
+                <constraint firstAttribute="bottom" secondItem="Wv1-gk-SVW" secondAttribute="bottom" id="wCj-O3-tuQ"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Startup_Screen" width="500" height="885"/>
+    </resources>
 </document>
