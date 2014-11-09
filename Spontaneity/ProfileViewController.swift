@@ -12,10 +12,10 @@ import Parse
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var imageView: UIImageView?
-    @IBOutlet var first: UILabel?
-    @IBOutlet var last: UILabel?
+    @IBOutlet var name: UILabel?
     @IBOutlet var email: UILabel?
     @IBOutlet var user: UILabel?
+    
     
     @IBOutlet var signout: UIButton?
 
@@ -51,10 +51,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             username = "Facebook Account"
         }
         
-        first?.text = f_name
-        last?.text = l_name
-        email?.text = email_address
-        user?.text = username
+        name?.text = f_name + " " + l_name
+        email?.text = " " + email_address
+        user?.text = " " + username
+        
+        email?.layer.borderColor = UIColor.grayColor().CGColor
+        email?.layer.borderWidth = 2
+        
+        user?.layer.borderColor = UIColor.grayColor().CGColor
+        user?.layer.borderWidth = 2
         
     }
     
