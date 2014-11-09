@@ -48,6 +48,12 @@ class NewGroupViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                     return false
                 })
+                for var i = 0; i < self.people.count; i++ {
+                    if self.people[i].objectId == PFUser.currentUser().objectId {
+                        self.people.removeAtIndex(i)
+                        break
+                    }
+                }
                 self.tableView?.reloadData()
             } else {
                 let errorString = error.userInfo?["error"] as String

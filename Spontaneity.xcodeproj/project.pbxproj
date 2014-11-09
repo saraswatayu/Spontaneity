@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A137EBF1A0F1B1900046251 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */; };
+		2A52C5B51A0F4C5B0048AAEA /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */; };
 		2A69B05F1A0E0C3000CBDDE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */; };
 		2A69B0621A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0601A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld */; };
 		2A69B0671A0E0C3000CBDDE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B0651A0E0C3000CBDDE4 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
+		2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2A69B0591A0E0C3000CBDDE4 /* Spontaneity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spontaneity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A69B05D1A0E0C3000CBDDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				2A69B0E61A0EF9B100CBDDE4 /* GroupsViewController.swift */,
 				2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */,
 				2A69B0E31A0EF1A200CBDDE4 /* ProfileViewController.swift */,
+				2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				2A69B0C51A0E2A1B00CBDDE4 /* MainTabBarViewController.swift in Sources */,
 				2A69B0621A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld in Sources */,
 				2A69B0E71A0EF9B100CBDDE4 /* GroupsViewController.swift in Sources */,
+				2A52C5B51A0F4C5B0048AAEA /* EventsViewController.swift in Sources */,
 				2A69B0E21A0EE77E00CBDDE4 /* LoginViewController.swift in Sources */,
 				2A137EBF1A0F1B1900046251 /* NewGroupViewController.swift in Sources */,
 				2A69B0D41A0E324B00CBDDE4 /* UIImage+GKContact.m in Sources */,

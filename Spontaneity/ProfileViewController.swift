@@ -35,7 +35,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     func showImagePicker() {
-        
         let imagePicker = UIImagePickerController()
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
@@ -47,19 +46,13 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         imagePicker.delegate = self
         
         presentViewController(imagePicker, animated: true, completion: nil)
-        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        
-
         let photo = info[UIImagePickerControllerOriginalImage] as UIImage
         imageView?.image = photo
         
         picker.dismissViewControllerAnimated(true, completion: nil)
-        
-
     }
     
     @IBAction func logout() {
