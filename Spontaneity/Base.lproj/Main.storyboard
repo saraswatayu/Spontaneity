@@ -291,19 +291,18 @@
                                     <action selector="logout" destination="64r-H1-cwU" eventType="touchUpInside" id="r83-aH-ykr"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-LG-Zsr">
-                                <rect key="frame" x="150" y="20" width="300" height="160"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-LG-Zsr">
+                                <rect key="frame" x="240" y="20" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="A7q-bk-fF8"/>
-                                    <constraint firstAttribute="height" constant="160" id="gfe-Nv-hPw"/>
+                                    <constraint firstAttribute="height" constant="120" id="C3a-jB-CfG"/>
+                                    <constraint firstAttribute="width" constant="120" id="a7t-8C-NMs"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lwh-LG-Zsr" firstAttribute="top" secondItem="qRS-Lo-xTC" secondAttribute="top" constant="20" id="Bnj-yN-Edb"/>
-                            <constraint firstItem="Lwh-LG-Zsr" firstAttribute="leading" secondItem="qRS-Lo-xTC" secondAttribute="leading" constant="150" id="IdX-fX-JeQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Lwh-LG-Zsr" secondAttribute="trailing" constant="150" id="RfS-RM-VNe"/>
+                            <constraint firstAttribute="centerX" secondItem="Lwh-LG-Zsr" secondAttribute="centerX" id="5eH-L4-tEI"/>
+                            <constraint firstItem="Lwh-LG-Zsr" firstAttribute="top" secondItem="qRS-Lo-xTC" secondAttribute="top" constant="20" id="axg-Vz-VVe"/>
                             <constraint firstItem="okO-jd-xzJ" firstAttribute="leading" secondItem="qRS-Lo-xTC" secondAttribute="leading" constant="16" id="eaT-lg-608"/>
                             <constraint firstAttribute="trailing" secondItem="okO-jd-xzJ" secondAttribute="trailing" constant="16" id="gxF-ph-l8k"/>
                             <constraint firstAttribute="bottom" secondItem="okO-jd-xzJ" secondAttribute="bottom" constant="20" id="o0q-Z9-got"/>

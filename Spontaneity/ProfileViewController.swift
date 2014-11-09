@@ -21,12 +21,14 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView?.contentMode = .ScaleAspectFit
+        
         imageView?.image = UIImage(named: "769-male.png")
         
         var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
         self.imageView?.addGestureRecognizer(tapGesture)
         signout?.layer.cornerRadius = 4.0
+        imageView?.layer.cornerRadius = 60.0
+        imageView?.clipsToBounds = true
     }
     
     func showImagePicker() {
