@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+class MainTabBarViewController: UITabBarController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()

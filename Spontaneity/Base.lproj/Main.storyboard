@@ -292,7 +292,6 @@
         <!--Join Spontaneity-->
         <scene sceneID="gFc-xz-cUC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xpk-6F-6iT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Join" title="Join Spontaneity" automaticallyAdjustsScrollViewInsets="NO" id="BGy-iR-mdH" customClass="JoinViewController" customModule="Spontaneity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FR8-4C-GCO"/>
@@ -413,13 +412,13 @@
                         <outlet property="username" destination="7Od-7p-43n" id="SWr-Qe-Iif"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpk-6F-6iT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-470" y="846"/>
         </scene>
         <!--Login-->
         <scene sceneID="kdV-io-hVR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hi3-y6-lGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Login" title="Login" automaticallyAdjustsScrollViewInsets="NO" id="oYY-ub-ZKo" customClass="LoginViewController" customModule="Spontaneity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g6l-wn-If1"/>
@@ -492,6 +491,7 @@
                         <outlet property="username" destination="sa8-7j-ffn" id="hgw-no-I7c"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hi3-y6-lGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-470" y="1146.5"/>
         </scene>
