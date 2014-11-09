@@ -13,7 +13,9 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "People"
+        self.title = "Groups"
+        var addGroup: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addGroup"))
+        self.navigationItem.rightBarButtonItem = addGroup
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,8 +26,18 @@ class MainTabBarViewController: UITabBarController {
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         self.title = item.title
+        
+        if item.title == "Groups" {
+            var addGroup: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addGroup"))
+            self.navigationItem.rightBarButtonItem = addGroup
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
+    func addGroup() {
+        self.selectedViewController?.performSegueWithIdentifier("Add Group", sender: self)
+    }
 
     /*
     // MARK: - Navigation
