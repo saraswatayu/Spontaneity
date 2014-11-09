@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView?.image = UIImage(named: "769-male.png")
+        imageView?.image = UIImage(named: "769-male@2x.png")
         
         var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
         self.imageView?.addGestureRecognizer(tapGesture)
