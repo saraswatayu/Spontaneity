@@ -68,9 +68,17 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name this group chat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXd-f0-a2g">
-                                <rect key="frame" x="16" y="148" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="148" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="biv-n1-feQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-aq-pFh">
+                                <rect key="frame" x="0.0" y="210" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vd9-vG-DJU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -82,17 +90,48 @@
                                     <constraint firstAttribute="height" constant="2" id="sNS-rT-4IS"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lFT-r1-22H">
+                                <rect key="frame" x="0.0" y="258" width="600" height="278"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="people" textLabel="HW6-Or-KBw" style="IBUITableViewCellStyleDefault" id="OV0-0J-3Tv">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OV0-0J-3Tv" id="jEh-yS-SLy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HW6-Or-KBw">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jZS-Lk-4oP" id="drJ-iH-XMR"/>
+                                    <outlet property="delegate" destination="jZS-Lk-4oP" id="Uey-0a-9AM"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lFT-r1-22H" secondAttribute="bottom" id="6Rn-Zk-Bf3"/>
+                            <constraint firstAttribute="trailing" secondItem="lFT-r1-22H" secondAttribute="trailing" id="O25-bq-hxE"/>
                             <constraint firstAttribute="trailing" secondItem="GeU-gI-y6u" secondAttribute="trailing" id="WfL-Qc-yAQ"/>
                             <constraint firstItem="SXd-f0-a2g" firstAttribute="top" secondItem="gUM-rZ-jfa" secondAttribute="top" constant="148" id="YOO-RY-TcC"/>
-                            <constraint firstAttribute="trailing" secondItem="SXd-f0-a2g" secondAttribute="trailing" constant="16" id="Zhs-XT-TcV"/>
-                            <constraint firstItem="SXd-f0-a2g" firstAttribute="leading" secondItem="gUM-rZ-jfa" secondAttribute="leading" constant="16" id="c4b-Ye-o1M"/>
+                            <constraint firstAttribute="trailing" secondItem="SXd-f0-a2g" secondAttribute="trailing" id="Zhs-XT-TcV"/>
+                            <constraint firstItem="LjV-aq-pFh" firstAttribute="leading" secondItem="gUM-rZ-jfa" secondAttribute="leading" id="b94-BB-mKU"/>
+                            <constraint firstItem="SXd-f0-a2g" firstAttribute="leading" secondItem="gUM-rZ-jfa" secondAttribute="leading" id="c4b-Ye-o1M"/>
                             <constraint firstItem="GeU-gI-y6u" firstAttribute="top" secondItem="gUM-rZ-jfa" secondAttribute="top" constant="200" id="ccx-wF-jAn"/>
                             <constraint firstAttribute="centerX" secondItem="nhp-tN-RKW" secondAttribute="centerX" id="h4b-DJ-N7B"/>
                             <constraint firstItem="nhp-tN-RKW" firstAttribute="top" secondItem="gUM-rZ-jfa" secondAttribute="top" constant="20" id="m7v-Da-bXE"/>
                             <constraint firstItem="GeU-gI-y6u" firstAttribute="leading" secondItem="gUM-rZ-jfa" secondAttribute="leading" id="mWH-WB-aOC"/>
+                            <constraint firstItem="LjV-aq-pFh" firstAttribute="top" secondItem="gUM-rZ-jfa" secondAttribute="top" constant="210" id="obz-he-oX5"/>
+                            <constraint firstItem="lFT-r1-22H" firstAttribute="top" secondItem="gUM-rZ-jfa" secondAttribute="top" constant="258" id="uXO-Vg-rzR"/>
+                            <constraint firstAttribute="trailing" secondItem="LjV-aq-pFh" secondAttribute="trailing" id="uuD-4W-F4j"/>
+                            <constraint firstItem="lFT-r1-22H" firstAttribute="leading" secondItem="gUM-rZ-jfa" secondAttribute="leading" id="xOo-4n-ktk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Group" id="wE0-yQ-eND">
@@ -101,10 +140,17 @@
                                 <action selector="cancel" destination="jZS-Lk-4oP" id="K3I-ED-aOr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="Fkq-rL-XyF">
+                            <connections>
+                                <action selector="create" destination="jZS-Lk-4oP" id="JzA-bA-hMG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="avatar" destination="nhp-tN-RKW" id="Wo2-Zu-Oi0"/>
                         <outlet property="name" destination="SXd-f0-a2g" id="xS3-td-xXr"/>
+                        <outlet property="search" destination="LjV-aq-pFh" id="G4i-U7-HGT"/>
+                        <outlet property="tableView" destination="lFT-r1-22H" id="Eeg-EU-I95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ef-II-q7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
