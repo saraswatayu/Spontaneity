@@ -13,12 +13,14 @@ static inline NSString *GKInitials(NSString *name) {
         if (part.length == 0) {
             return;
         }
-
-        [initials appendString:[part substringToIndex:1]];
-
-        if (idx == 1) {
-            *stop = YES;
-        };
+        
+        if (part.length >= 2) {
+            [initials appendString:[part substringToIndex:2]];
+        } else {
+            [initials appendString:[part substringToIndex:1]];
+        }
+        
+        *stop = YES;
     }];
 
     return initials;
@@ -72,11 +74,11 @@ static inline NSString *GKContactKey(NSString *initials, CGSize size) {
     [path setLineWidth:1.0f];
     [path stroke];
 
-    UIColor *color = [UIColor colorWithRed:0.784 green:0.776 blue:0.800 alpha:1];
+    UIColor *color = [UIColor colorWithRed:0.898 green:0.035 blue:0.035 alpha:1];
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, w, h));
 
-    UIFont *font = [UIFont systemFontOfSize:r - 1];
+    UIFont *font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:r];
     NSDictionary *dict = @{NSFontAttributeName: font, NSForegroundColorAttributeName: [UIColor whiteColor]};
     CGSize textSize = [initials sizeWithAttributes:dict];
 
