@@ -90,14 +90,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "Add Event" {
+            let navController: UINavigationController = segue.destinationViewController as UINavigationController
+            let newEventController: NewEventViewController = navController.viewControllers[0] as NewEventViewController
+            newEventController.groupID = self.groupID
+        }
     }
-    */
-
 }
