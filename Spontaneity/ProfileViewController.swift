@@ -9,18 +9,54 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet var image: UIImage?
+    @IBOutlet var imageView: UIImageView?
     @IBOutlet var name: UILabel?
     @IBOutlet var email: UILabel?
     
     @IBOutlet var signout: UIButton?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imageView?.image = UIImage(named: "769-male.png")
+        
+        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
+        self.imageView?.addGestureRecognizer(tapGesture)
         signout?.layer.cornerRadius = 4.0
+        imageView?.layer.cornerRadius = 60.0
+        imageView?.clipsToBounds = true
+    }
+    
+    func showImagePicker() {
+        
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        
+
+        let photo = info[UIImagePickerControllerOriginalImage] as UIImage
+        imageView?.image = photo
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+
     }
     
     @IBAction func logout() {
