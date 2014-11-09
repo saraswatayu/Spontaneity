@@ -12,10 +12,13 @@ import Parse
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var imageView: UIImageView?
-    @IBOutlet var name: UILabel?
+    @IBOutlet var first: UILabel?
+    @IBOutlet var last: UILabel?
     @IBOutlet var email: UILabel?
+    @IBOutlet var user: UILabel?
     
     @IBOutlet var signout: UIButton?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,27 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         imageView?.layer.borderWidth = 1.0
         
         imageView?.clipsToBounds = true
+        
+        
+        var f_name: String = ""
+        var l_name: String = ""
+        var username: String = ""
+        var email_address: String = ""
+        
+        f_name = PFUser.currentUser()["firstName"] as String
+        l_name = PFUser.currentUser()["lastName"] as String
+        username = PFUser.currentUser().username
+        email_address = PFUser.currentUser().email
+        
+        if (username == "") {
+            username = "Facebook Account"
+        }
+        
+        first?.text = f_name
+        last?.text = l_name
+        email?.text = email_address
+        user?.text = username
+        
     }
     
     func showImagePicker() {
@@ -61,6 +85,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
 
     }
+
     
     @IBAction func logout() {
         PFUser.logOut()
