@@ -33,8 +33,8 @@ class NewGroupViewController: UIViewController, UITableViewDelegate, UITableView
         self.name?.addTarget(self, action: Selector("nameChanged:"), forControlEvents: .EditingChanged)
         self.search?.addTarget(self, action: Selector("searchTextChanged:"), forControlEvents: .EditingChanged)
         
-        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard"))
-        self.view.addGestureRecognizer(tapGesture)
+        //var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard"))
+        //self.view.addGestureRecognizer(tapGesture)
         selectedPeople.append(PFUser.currentUser().objectId)
         
         var query = PFQuery(className: "_User")
@@ -100,8 +100,21 @@ class NewGroupViewController: UIViewController, UITableViewDelegate, UITableView
                     var group: PFObject = PFObject(className: "Groups")
                     group["name"] = name
                     group["members"] = selectedPeople.description
-                    group.save()
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    group.saveInBackgroundWithBlock {
+                        (succeeded: Bool!, error: NSError!) -> Void in
+                        if error != nil {
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        } else {
+                            let errorString = error.userInfo?["error"] as String
+                            var alertView: UIAlertController = UIAlertController(title: "Create Group Failed", message: errorString, preferredStyle: .Alert)
+                            
+                            let cancel = UIAlertAction(title: "Dismiss", style: .Cancel) { (action) in
+                            }
+                            alertView.addAction(cancel)
+                            
+                            self.parentViewController?.presentViewController(alertView, animated: true, completion: nil)
+                        }
+                    }
                 } else {
                     var alertView: UIAlertController = UIAlertController(title: "Add People", message: "Add people to your group to spontaneously create events.", preferredStyle: .Alert)
                     let cancel = UIAlertAction(title: "Dismiss", style: .Cancel) { (action) in
