@@ -1,2 +1,3 @@
-Spontaneity - the secret to spontaneous meet-ups
+Spontaneity
+the secret to spontaneous meet-ups
 ===========
