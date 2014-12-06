@@ -89,7 +89,22 @@ class WelcomeViewController: UIViewController {
                 
                 self.presentViewController(alertView, animated: true, completion: nil)
             } else {
-                self.performSegueWithIdentifier("LoggedIn", sender: self)
+                FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
+                    if error == nil {
+                        PFUser.currentUser()["firstName"] = result["first_name"] as String
+                        PFUser.currentUser()["lastName"] = result["last_name"] as String
+                        PFUser.currentUser().email = result.email as String
+                        PFUser.currentUser().username = (result["first_name"] as String).lowercaseString + "_" + (result["last_name"] as String).lowercaseString
+                        PFUser.currentUser().saveInBackgroundWithBlock {
+                            (succeeded: Bool!, error: NSError!) -> Void in
+                            if error == nil {
+                                self.performSegueWithIdentifier("LoggedIn", sender: self)
+                            } else {
+
+                            }
+                        }
+                    }
+                })
             }
         })
     }

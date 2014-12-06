@@ -9,19 +9,83 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet var image: UIImage?
+    @IBOutlet var imageView: UIImageView?
     @IBOutlet var name: UILabel?
     @IBOutlet var email: UILabel?
+    @IBOutlet var user: UILabel?
+    
     
     @IBOutlet var signout: UIButton?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imageView?.image = UIImage(named: "769-male.png")
+        
+        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("showImagePicker"))
+        self.imageView?.addGestureRecognizer(tapGesture)
+        
         signout?.layer.cornerRadius = 4.0
+        
+        imageView?.layer.cornerRadius = 60.0
+        imageView?.layer.borderColor = UIColor.blackColor().CGColor
+        imageView?.layer.borderWidth = 1.0
+        
+        imageView?.clipsToBounds = true
+        
+        var f_name = PFUser.currentUser()["firstName"] as? String
+        var l_name = PFUser.currentUser()["lastName"] as? String
+        var username = PFUser.currentUser().username
+        var email_address = PFUser.currentUser().email
+        
+        if (username == "") {
+            username = "Facebook Account"
+        }
+        
+        if f_name != nil && l_name != nil {
+            name?.text = f_name! + " " + l_name!
+        } else {
+
+        }
+        
+        if email_address != nil {
+            email?.text = " " + email_address!
+        }
+        
+        user?.text = " " + username
+        
+        email?.layer.borderColor = UIColor.grayColor().CGColor
+        email?.layer.borderWidth = 2
+        
+        user?.layer.borderColor = UIColor.grayColor().CGColor
+        user?.layer.borderWidth = 2
+        
     }
+    
+    func showImagePicker() {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let photo = info[UIImagePickerControllerOriginalImage] as UIImage
+        imageView?.image = photo
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     @IBAction func logout() {
         PFUser.logOut()

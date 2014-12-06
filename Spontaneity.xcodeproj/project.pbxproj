@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2A137EBF1A0F1B1900046251 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */; };
+		2A52C5B51A0F4C5B0048AAEA /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */; };
+		2A5D61E51A0F6A9C0053ED74 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D61E41A0F6A9C0053ED74 /* NewEventViewController.swift */; };
 		2A69B05F1A0E0C3000CBDDE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */; };
 		2A69B0621A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0601A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld */; };
 		2A69B0671A0E0C3000CBDDE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B0651A0E0C3000CBDDE4 /* Main.storyboard */; };
-		2A69B0691A0E0C3000CBDDE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */; };
 		2A69B06C1A0E0C3000CBDDE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A69B06A1A0E0C3000CBDDE4 /* LaunchScreen.xib */; };
 		2A69B0781A0E0C3000CBDDE4 /* SpontaneityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0771A0E0C3000CBDDE4 /* SpontaneityTests.swift */; };
 		2A69B0851A0E0CB600CBDDE4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A69B0811A0E0CB600CBDDE4 /* Bolts.framework */; };
@@ -47,6 +48,7 @@
 		2A69B0E21A0EE77E00CBDDE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0E11A0EE77E00CBDDE4 /* LoginViewController.swift */; };
 		2A69B0E41A0EF1A200CBDDE4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0E31A0EF1A200CBDDE4 /* ProfileViewController.swift */; };
 		2A69B0E71A0EF9B100CBDDE4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69B0E61A0EF9B100CBDDE4 /* GroupsViewController.swift */; };
+		5F35E70F1A0F589C00C5C927 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F35E70E1A0F589C00C5C927 /* Images.xcassets */; };
 		709FF67F1A0F33C0004A0D33 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709FF67E1A0F33C0004A0D33 /* Images-2.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +64,13 @@
 
 /* Begin PBXFileReference section */
 		2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
+		2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2A5D61E41A0F6A9C0053ED74 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		2A69B0591A0E0C3000CBDDE4 /* Spontaneity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spontaneity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A69B05D1A0E0C3000CBDDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A69B0611A0E0C3000CBDDE4 /* Spontaneity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spontaneity.xcdatamodel; sourceTree = "<group>"; };
 		2A69B0661A0E0C3000CBDDE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A69B06B1A0E0C3000CBDDE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2A69B0711A0E0C3000CBDDE4 /* SpontaneityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpontaneityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A69B0761A0E0C3000CBDDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		2A69B0E11A0EE77E00CBDDE4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2A69B0E31A0EF1A200CBDDE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2A69B0E61A0EF9B100CBDDE4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		5F35E70E1A0F589C00C5C927 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		709FF67E1A0F33C0004A0D33 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,9 +179,9 @@
 				2A69B0B41A0E27AC00CBDDE4 /* Groups */,
 				2A69B05E1A0E0C3000CBDDE4 /* AppDelegate.swift */,
 				2A69B0651A0E0C3000CBDDE4 /* Main.storyboard */,
-				2A69B0681A0E0C3000CBDDE4 /* Images.xcassets */,
 				2A69B06A1A0E0C3000CBDDE4 /* LaunchScreen.xib */,
 				2A69B0601A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld */,
+				5F35E70E1A0F589C00C5C927 /* Images.xcassets */,
 				709FF67E1A0F33C0004A0D33 /* Images-2.xcassets */,
 				2A69B05C1A0E0C3000CBDDE4 /* Supporting Files */,
 			);
@@ -272,6 +276,8 @@
 				2A69B0E61A0EF9B100CBDDE4 /* GroupsViewController.swift */,
 				2A137EBE1A0F1B1900046251 /* NewGroupViewController.swift */,
 				2A69B0E31A0EF1A200CBDDE4 /* ProfileViewController.swift */,
+				2A52C5B41A0F4C5B0048AAEA /* EventsViewController.swift */,
+				2A5D61E41A0F6A9C0053ED74 /* NewEventViewController.swift */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -410,11 +416,11 @@
 				2A69B0BC1A0E282D00CBDDE4 /* 769-male@2x.png in Resources */,
 				2A69B0DE1A0E9B9500CBDDE4 /* FB-fLogo-online-broadcast.png in Resources */,
 				2A69B0B31A0E27AA00CBDDE4 /* 974-users@2x.png in Resources */,
+				5F35E70F1A0F589C00C5C927 /* Images.xcassets in Resources */,
 				2A69B0671A0E0C3000CBDDE4 /* Main.storyboard in Resources */,
 				2A69B06C1A0E0C3000CBDDE4 /* LaunchScreen.xib in Resources */,
 				709FF67F1A0F33C0004A0D33 /* Images-2.xcassets in Resources */,
 				2A69B0B21A0E27AA00CBDDE4 /* 974-users.png in Resources */,
-				2A69B0691A0E0C3000CBDDE4 /* Images.xcassets in Resources */,
 				2A69B0BB1A0E282D00CBDDE4 /* 769-male.png in Resources */,
 				2A69B0CB1A0E2E5600CBDDE4 /* 740-gear@2x.png in Resources */,
 			);
@@ -439,10 +445,12 @@
 				2A69B0C51A0E2A1B00CBDDE4 /* MainTabBarViewController.swift in Sources */,
 				2A69B0621A0E0C3000CBDDE4 /* Spontaneity.xcdatamodeld in Sources */,
 				2A69B0E71A0EF9B100CBDDE4 /* GroupsViewController.swift in Sources */,
+				2A52C5B51A0F4C5B0048AAEA /* EventsViewController.swift in Sources */,
 				2A69B0E21A0EE77E00CBDDE4 /* LoginViewController.swift in Sources */,
 				2A137EBF1A0F1B1900046251 /* NewGroupViewController.swift in Sources */,
 				2A69B0D41A0E324B00CBDDE4 /* UIImage+GKContact.m in Sources */,
 				2A69B0E41A0EF1A200CBDDE4 /* ProfileViewController.swift in Sources */,
+				2A5D61E51A0F6A9C0053ED74 /* NewEventViewController.swift in Sources */,
 				2A69B05F1A0E0C3000CBDDE4 /* AppDelegate.swift in Sources */,
 				2A69B0E01A0ED32500CBDDE4 /* JoinViewController.swift in Sources */,
 			);
